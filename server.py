@@ -71,10 +71,10 @@ def export_to_csv(sid, data):
     docu_path = buf.value
     filename = str(uuid.uuid4())
     filepath = os.path.join(docu_path, "rikaiServer", "anki_csv", filename + ".csv")
-    with open(filepath, mode='w+', encoding="utf-8") as f:
+    with open(filepath, mo  de='w+', encoding="utf-8") as f:
         f.write(data)
     if os.path.isfile(filepath):
-        print(f"CSV file written at {filepath}")
+        print(f"CSV file written at:\n\t{filepath}")
         sio.emit("can_clear_review", "")
     
 
